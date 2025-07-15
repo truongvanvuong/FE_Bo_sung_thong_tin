@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    "
+    <link rel="stylesheet" href="./assets/main.css" />
+    <style type="text/tailwindcss">
+      @theme {
+        --font-display: "Inter", sans-serif;
+        --color-grey-100: #e1dedd;
+        --color-grey-600: #2c2a29;
+      }
+    </style>
+    <title>My Scrum Project</title>
+  </head>
+
+  <body class="font-display">
+    <!-- Header -->
+    <header
+      class="bg-white w-full h-[90px] border-b border-grey-100 shadow-[0px_0px_20px_0px_#0000001A] flex items-center"
+    >
+      <div class="flex items-center justify-between mx-[30px] w-full">
+        <div class="flex items-center gap-5">
+          <a>
+            <div>
+              <figure class="h-[26px]">
+                <img
+                  class="w-full h-full"
+                  src="./assets/Logo.png"
+                  alt="comanpro"
+                />
+              </figure>
+            </div>
+          </a>
+          <nav class="gap-[10px]">
+            <a
+              href="#"
+              class="px-[20px] py-2 font-semibold text-[18px] leading-[27px] text-grey-600 bg-[#FFEFD5] rounded-[10px]"
+              >Bán</a
+            >
+            <a
+              href="#"
+              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
+              >Cho thuê</a
+            >
+            <a
+              href="#"
+              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
+              >Danh mục</a
+            ><a
+              href="#"
+              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
+              >Blogs</a
+            ><a
+              href="#"
+              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
+              >FAQ</a
+            ><a
+              href="#"
+              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
+              >Về chúng tôi</a
+            >
+          </nav>
+        </div>
+        <div class="flex items-center gap-4">
+          <button
+            class="flex items-center gap-[10px] px-[20px] py-[9px] bg-[#FFA21A] rounded-[10px]"
+          >
+            <figure class="size-6">
+              <img
+                class="w-full h-full"
+                src="./assets/note-add.svg"
+                alt="note-add"
+              />
+            </figure>
+            <span> Đăng sản phẩm </span>
+          </button>
+          <button class="px-[20px] py-[11px] bg-[#FFA21A] rounded-[10px]">
+            <figure class="size-6">
+              <img
+                class="w-full h-full"
+                src="./assets/note-add.svg"
+                alt="note-add"
+              />
+            </figure>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Form container -->
+    <div
+      class="flex relative justify-center bg-[url('./assets/bg.jpg')] bg-cover bg-center bg-no-repeat"
+    >
+      <div class="absolute inset-0 bg-[#FFC900] opacity-85"></div>
+      <div
+        class="bg-white flex flex-col relative shadow-[0px_0p_16p_0px_#00000026] rounded-[20px] gap-[30px] p-[30px] w-full max-w-xl mt-[50px] mb-[50px]"
+      >
+        <div class="gap-6">
+          <h2 class="text-[28px] font-semibold text-grey-600">
+            Bổ sung thông tin
+          </h2>
+          <p class="text-[16px] font-normal text-grey-600">
+            Để có thể mua-bán sản phẩm, bạn cần cung cấp bổ sung cho chúng tôi
+            các thông tin sau
+          </p>
+        </div>
+
+        <!-- Radio chọn loại tài khoản -->
+        <div class="flex flex-col gap-1">
+          <h3 class="font-semibold text-[16px] text-[#000000]">
+            Bổ sung thông tin cho tài khoản
+          </h3>
+          <div class="flex items-center gap-[60px]">
+            <div class="checkbox-wrapper-4">
+              <input class="inp-cbx" id="organization" type="checkbox" />
+              <label class="cbx" for="organization"
+                ><span>
+                  <svg width="12px" height="10px">
+                    <use xlink:href="#check-4"></use></svg></span
+                ><span>Tổ chức</span></label
+              >
+              <svg class="inline-svg">
+                <symbol id="check-4" viewbox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </symbol>
+              </svg>
+            </div>
+            <div class="checkbox-wrapper-4">
+              <input class="inp-cbx" id="personal" type="checkbox" />
+              <label class="cbx" for="personal"
+                ><span>
+                  <svg width="12px" height="10px">
+                    <use xlink:href="#check-4"></use></svg></span
+                ><span>Cá nhân</span></label
+              >
+              <svg class="inline-svg">
+                <symbol id="check-4" viewbox="0 0 12 10">
+                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                </symbol>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="gap-4 flex flex-col">
+          <!-- Upload ảnh -->
+
+          <div
+            class="border flex items-center justify-center gap-[18px] border-dashed rounded-[10px] py-4 px-3 border-[#FFC900] bg-[#FFEFD5] text-center"
+          >
+            <p class="text-sm mb-2">
+              Tải lên ảnh giấy phép kinh doanh<br /><span
+                class="text-xs text-gray-500"
+                >(Vui lòng chọn tối đa 2 ảnh)</span
+              >
+            </p>
+            <input type="file" accept="image/*" class="hidden" id="upload" />
+            <label
+              for="upload"
+              class="inline-block bg-orange-500 text-white px-4 py-2 rounded-lg cursor-pointer hover:bg-orange-600"
+              >Chọn ảnh</label
+            >
+          </div>
+
+          <!-- Các trường nhập -->
+          <div class="space-y-4">
+            <input
+              type="text"
+              placeholder="Tên công ty (Tùy chọn)"
+              class="w-full border rounded-lg p-3 text-sm placeholder-gray-500"
+            />
+            <input
+              type="text"
+              placeholder="Số ĐKKD (Tùy chọn)"
+              class="w-full border rounded-lg p-3 text-sm placeholder-gray-500"
+            />
+            <input
+              type="text"
+              placeholder="Địa chỉ công ty (Tùy chọn)"
+              class="w-full border rounded-lg p-3 text-sm placeholder-gray-500"
+            />
+            <input
+              type="email"
+              placeholder="Email (Tùy chọn)"
+              class="w-full border rounded-lg p-3 text-sm placeholder-gray-500"
+            />
+            <input
+              type="text"
+              placeholder="Họ tên bạn (Tùy chọn)"
+              class="w-full border rounded-lg p-3 text-sm placeholder-gray-500"
+            />
+            <input
+              type="text"
+              placeholder="Vị trí làm việc trong công ty (Tùy chọn)"
+              class="w-full border rounded-lg p-3 text-sm placeholder-gray-500"
+            />
+          </div>
+
+          <!-- Nút -->
+          <div class="flex justify-between items-center mt-4">
+            <button
+              class="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"
+            >
+              Hủy
+            </button>
+            <button
+              class="px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600"
+            >
+              Gửi yêu cầu
+            </button>
+          </div>
+        </div>
+
+        <!-- Hỗ trợ -->
+        <p class="text-sm text-center text-gray-600">
+          Bạn đang có vấn đề?
+          <a href="#" class="text-blue-600 hover:underline">Yêu cầu hỗ trợ</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center text-sm text-gray-700 mt-12 mb-4">
+      © 2024 comacPro. Ltd. All Rights Reserved
+    </footer>
+  </body>
+</html>
