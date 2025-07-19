@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/main.css" />
+    <style type="text/tailwindcss">
+      @theme {
+        --font-display: "Inter", sans-serif;
+        --color-grey-100: #e1dedd;
+        --color-grey-600: #2c2a29;
+      }
+    </style>
+    <title>Xác nhận thành công</title>
+  </head>
+
+  <body class="font-display">
+    <!-- Header -->
+    <header
+      class="bg-white w-full h-[90px] border-b border-grey-100 shadow-[0px_0px_20px_0px_#0000001A] flex items-center"
+    >
+      <div class="flex items-center justify-between mx-[30px] w-full">
+        <div class="flex items-center gap-5">
+          <a>
+            <div>
+              <figure class="h-[26px]">
+                <img
+                  class="w-full h-full"
+                  src="./assets/Logo.png"
+                  alt="comanpro"
+                />
+              </figure>
+            </div>
+          </a>
+          <nav class="gap-[10px]">
+            <a
+              href="#"
+              class="px-[20px] py-2 font-semibold text-[18px] leading-[27px] text-grey-600 bg-[#FFEFD5] rounded-[10px]"
+              >Bán</a
+            >
+            <a
+              href="#"
+              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
+              >Cho thuê</a
+            >
+            <a
+              href="#"
+              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
+              >Danh mục</a
+            ><a
+              href="#"
+              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
+              >Blogs</a
+            ><a
+              href="#"
+              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
+              >FAQ</a
+            ><a
+              href="#"
+              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
+              >Về chúng tôi</a
+            >
+          </nav>
+        </div>
+        <div class="flex items-center gap-4">
+          <button
+            class="flex items-center gap-[10px] px-[20px] py-[9px] bg-[#FFA21A] rounded-[10px]"
+          >
+            <figure class="size-6">
+              <img
+                class="w-full h-full"
+                src="./assets/note-add.svg"
+                alt="note-add"
+              />
+            </figure>
+            <span> Đăng sản phẩm </span>
+          </button>
+          <button class="px-[20px] py-[11px] bg-[#FFA21A] rounded-[10px]">
+            <figure class="size-6">
+              <img
+                class="w-full h-full"
+                src="./assets/note-add.svg"
+                alt="note-add"
+              />
+            </figure>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- main -->
+    <div
+      class="flex justify-center items-center relative w-full bg-[url('./assets/bg.jpg')] bg-cover bg-center bg-no-repeat h-[calc(100vh-150px)]"
+    >
+      <div class="absolute inset-0 bg-[#FFC900] opacity-85"></div>
+
+      <!-- Form container -->
+      <div
+        class="bg-white relative shadow-[0px_0p_16p_0px_#00000026] rounded-[20px] p-[30px] w-full max-w-xl mt-[50px] mb-[50px]"
+      >
+        <!-- Bổ sung thông tin thành công -->
+        <div class="flex-col gap-[30px] flex">
+          <figure class="h-[150px] flex justify-center">
+            <img src="./assets/Group.png" class="h-full" />
+          </figure>
+          <div class="flex flex-col gap-1.5">
+            <h2 class="text-[28px] font-semibold text-center text-grey-600">
+              Gửi Thành công
+            </h2>
+            <p class="text-[#2C2A29] font-normal text-[16px] text-center">
+              Cám ơn bạn đã bổ suntg thông tin tài khoản.<br />
+              Chúng tôi sẽ liên hệ lại trong 24h để xác minh tài khoản của bạn.
+            </p>
+          </div>
+          <button
+            class="cursor-pointer py-[11px] px-[20px] bg-[#FFA21A] rounded-[10px] text-[16px] font-semibold text-[#121110] leading-[27px]"
+          >
+            Quay về trang chủ
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-white h-[60px] flex items-center justify-center">
+      <p class="text-[16px] leading-[21px] font-semibold text-[#4C4A48]">
+        © 2024 comacPro. Ltd. All Rights Reserved
+      </p>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>

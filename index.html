@@ -10,7 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-    "
+
     <link rel="stylesheet" href="./assets/main.css" />
     <style type="text/tailwindcss">
       @theme {
@@ -96,193 +96,333 @@
       </div>
     </header>
 
-    <!-- Form container -->
+    <!-- main -->
     <div
-      class="flex relative justify-center bg-[url('./assets/bg.jpg')] bg-cover bg-center bg-no-repeat"
+      class="flex justify-center items-center relative w-full bg-[url('./assets/bg.jpg')] bg-cover bg-center bg-no-repeat"
     >
       <div class="absolute inset-0 bg-[#FFC900] opacity-85"></div>
+
+      <!-- Form container -->
       <div
-        class="bg-white flex flex-col relative shadow-[0px_0p_16p_0px_#00000026] rounded-[20px] gap-[30px] p-[30px] w-full max-w-xl mt-[50px] mb-[50px]"
+        class="bg-white relative shadow-[0px_0p_16p_0px_#00000026] rounded-[20px] p-[30px] w-full max-w-xl mt-[50px] mb-[50px]"
       >
-        <div class="gap-6">
-          <h2 class="text-[28px] font-semibold text-grey-600">
-            Bổ sung thông tin
-          </h2>
-          <p class="text-[16px] font-normal text-grey-600">
-            Để có thể mua-bán sản phẩm, bạn cần cung cấp bổ sung cho chúng tôi
-            các thông tin sau
-          </p>
-        </div>
-
-        <!-- Radio chọn loại tài khoản -->
-        <div class="flex flex-col gap-1">
-          <h3 class="font-semibold text-[16px] text-[#000000]">
-            Bổ sung thông tin cho tài khoản
-          </h3>
-          <div class="flex items-center gap-[60px]">
-            <div class="checkbox-wrapper-4">
-              <input class="inp-cbx" id="organization" type="checkbox" />
-              <label class="cbx" for="organization"
-                ><span>
-                  <svg width="12px" height="10px">
-                    <use xlink:href="#check-4"></use></svg></span
-                ><span>Tổ chức</span></label
-              >
-              <svg class="inline-svg">
-                <symbol id="check-4" viewbox="0 0 12 10">
-                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                </symbol>
-              </svg>
-            </div>
-            <div class="checkbox-wrapper-4">
-              <input class="inp-cbx" id="personal" type="checkbox" />
-              <label class="cbx" for="personal"
-                ><span>
-                  <svg width="12px" height="10px">
-                    <use xlink:href="#check-4"></use></svg></span
-                ><span>Cá nhân</span></label
-              >
-              <svg class="inline-svg">
-                <symbol id="check-4" viewbox="0 0 12 10">
-                  <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
-                </symbol>
-              </svg>
-            </div>
-          </div>
-        </div>
-
-        <div class="gap-4 flex flex-col">
-          <!-- Upload ảnh -->
-
-          <div
-            class="border flex items-center justify-center gap-[18px] border-dashed rounded-[10px] py-4 px-3 border-[#FFC900] bg-[#FFEFD5] text-center"
-          >
-            <p class="text-sm text-[#121110] font-medium">
-              Tải lên ảnh giấy phép kinh doanh<br /><span
-                class="text-xs font-normal text-[#61605D]"
-                >(Vui lòng chọn tối đa 2 ảnh)</span
-              >
+        <!-- Bổ sung thông tin tài khoản -->
+        <div class="flex-col gap-[30px] flex">
+          <div class="gap-6">
+            <h2 class="text-[28px] font-semibold text-grey-600">
+              Bổ sung thông tin
+            </h2>
+            <p class="text-[16px] font-normal text-grey-600">
+              Để có thể mua-bán sản phẩm, bạn cần cung cấp bổ sung cho chúng tôi
+              các thông tin sau
             </p>
-            <div
-              class="inline-block bg-[#FFA21A] px-[20px] py-[9px] rounded-[10px] cursor-pointer"
-            >
-              <input type="file" accept="image/*" class="hidden" id="upload" />
-              <label
-                for="upload"
-                class="text-[#121110] font-semibold text-[14px] cursor-pointer"
-                >Chọn ảnh</label
-              >
+          </div>
+          <!-- Radio chọn loại tài khoản -->
+          <div class="flex flex-col gap-1">
+            <h3 class="font-semibold text-[16px] text-[#000000]">
+              Bổ sung thông tin cho tài khoản
+            </h3>
+            <div class="flex items-center gap-[60px]">
+              <div class="checkbox-wrapper-4">
+                <input
+                  class="inp-cbx"
+                  id="organization"
+                  type="checkbox"
+                  checked
+                  onclick="showForm('company')"
+                />
+                <label class="cbx" for="organization"
+                  ><span>
+                    <svg width="12px" height="10px">
+                      <use xlink:href="#check-4"></use></svg></span
+                  ><span>Công ty</span></label
+                >
+                <svg class="inline-svg">
+                  <symbol id="check-4" viewbox="0 0 12 10">
+                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                  </symbol>
+                </svg>
+              </div>
+              <div class="checkbox-wrapper-4">
+                <input
+                  class="inp-cbx"
+                  id="personal"
+                  type="checkbox"
+                  onclick="showForm('personal')"
+                />
+                <label class="cbx" for="personal"
+                  ><span>
+                    <svg width="12px" height="10px">
+                      <use xlink:href="#check-4"></use></svg></span
+                  ><span>Cá nhân</span></label
+                >
+                <svg class="inline-svg">
+                  <symbol id="check-4" viewbox="0 0 12 10">
+                    <polyline points="1.5 6 4.5 9 10.5 1"></polyline>
+                  </symbol>
+                </svg>
+              </div>
             </div>
           </div>
-
-          <!-- Các trường nhập -->
-          <div class="gap-4 flex flex-col">
-            <div class="gap-1 flex flex-col">
-              <label class="text-[16px] font-semibold text-[#121110]"
-                >Tên công ty
-                <span class="font-medium text-[14px] text-[#61605D]"
-                  >(Tùy chọn)</span
-                ></label
-              >
-              <input
-                type="text"
-                placeholder="Nhập tên công ty"
-                class="w-full border rounded-[10px] outline-none font-medium bg-[#F3F3F3] border-[#F3F3F3] py-[11px] px-[16px] text-[14px]"
-              />
-            </div>
-            <div class="gap-1 flex flex-col">
-              <label class="text-[16px] font-semibold text-[#121110]"
-                >Tên công ty
-                <span class="font-medium text-[14px] text-[#61605D]"
-                  >(Tùy chọn)</span
-                ></label
-              >
-              <input
-                type="text"
-                placeholder="Nhập tên công ty"
-                class="w-full border rounded-[10px] outline-none font-medium bg-[#F3F3F3] border-[#F3F3F3] py-[11px] px-[16px] text-[14px]"
-              />
-            </div>
-            <div class="gap-1 flex flex-col">
-              <label class="text-[16px] font-semibold text-[#121110]"
-                >Tên công ty
-                <span class="font-medium text-[14px] text-[#61605D]"
-                  >(Tùy chọn)</span
-                ></label
-              >
-              <input
-                type="text"
-                placeholder="Nhập tên công ty"
-                class="w-full border rounded-[10px] outline-none font-medium bg-[#F3F3F3] border-[#F3F3F3] py-[11px] px-[16px] text-[14px]"
-              />
-            </div>
-            <div class="gap-1 flex flex-col">
-              <label class="text-[16px] font-semibold text-[#121110]"
-                >Tên công ty
-                <span class="font-medium text-[14px] text-[#61605D]"
-                  >(Tùy chọn)</span
-                ></label
-              >
-              <input
-                type="text"
-                placeholder="Nhập tên công ty"
-                class="w-full border rounded-[10px] outline-none font-medium bg-[#F3F3F3] border-[#F3F3F3] py-[11px] px-[16px] text-[14px]"
-              />
-            </div>
-            <div class="gap-1 flex flex-col">
-              <label class="text-[16px] font-semibold text-[#121110]"
-                >Tên công ty
-                <span class="font-medium text-[14px] text-[#61605D]"
-                  >(Tùy chọn)</span
-                ></label
-              >
-              <input
-                type="text"
-                placeholder="Nhập tên công ty"
-                class="w-full border rounded-[10px] outline-none font-medium bg-[#F3F3F3] border-[#F3F3F3] py-[11px] px-[16px] text-[14px]"
-              />
-            </div>
-            <div class="gap-1 flex flex-col">
-              <label class="text-[16px] font-semibold text-[#121110]"
-                >Tên công ty
-                <span class="font-medium text-[14px] text-[#61605D]"
-                  >(Tùy chọn)</span
-                ></label
-              >
-              <input
-                type="text"
-                placeholder="Nhập tên công ty"
-                class="w-full border rounded-[10px] outline-none font-medium bg-[#F3F3F3] border-[#F3F3F3] py-[11px] px-[16px] text-[14px]"
-              />
-            </div>
+          <div>
+            <!-- Form trường nhập công ty -->
+            <form
+              action="#"
+              class="flex-col gap-[30px]"
+              id="companyForm"
+              style="display: none"
+            >
+              <div class="gap-4 flex flex-col">
+                <div
+                  class="border flex items-center justify-center gap-[18px] border-dashed rounded-[10px] py-4 px-3 border-[#FFC900] bg-[#FFEFD5] text-center"
+                >
+                  <p class="text-sm text-[#121110] font-medium">
+                    Tải lên ảnh giấy phép kinh doanh<br /><span
+                      class="text-xs font-normal text-[#61605D]"
+                      >(Vui lòng chọn tối đa 2 ảnh)</span
+                    >
+                  </p>
+                  <div
+                    class="inline-block bg-[#FFA21A] px-[20px] py-[9px] rounded-[10px] cursor-pointer"
+                  >
+                    <input
+                      type="file"
+                      accept="image/*"
+                      class="hidden"
+                      id="upload"
+                    />
+                    <label
+                      for="upload"
+                      class="text-[#121110] font-semibold text-[14px] cursor-pointer"
+                      >Chọn ảnh</label
+                    >
+                  </div>
+                </div>
+                <!-- Các trường nhập công ty -->
+                <div class="gap-4 flex flex-col">
+                  <div class="gap-1 flex flex-col">
+                    <label
+                      for="companyName"
+                      class="text-[16px] font-semibold text-[#121110]"
+                      >Tên công ty
+                      <span class="font-medium text-[14px] text-[#61605D]"
+                        >(Tùy chọn)</span
+                      ></label
+                    >
+                    <input
+                      required
+                      id="companyName"
+                      type="text"
+                      placeholder="Nhập tên công ty"
+                      class="w-full border rounded-[10px] outline-none font-medium bg-[#F3F3F3] border-[#F3F3F3] py-[11px] px-[16px] text-[14px]"
+                    />
+                  </div>
+                  <div class="gap-1 flex flex-col">
+                    <label
+                      for="businessRegistrationNumber"
+                      class="text-[16px] font-semibold text-[#121110]"
+                      >Số ĐKKD
+                      <span class="font-medium text-[14px] text-[#61605D]"
+                        >(Tùy chọn)</span
+                      ></label
+                    >
+                    <input
+                      required
+                      id="businessRegistrationNumber"
+                      type="text"
+                      placeholder="Nhập số giấy phép kinh doanh"
+                      class="w-full border rounded-[10px] outline-none font-medium bg-[#F3F3F3] border-[#F3F3F3] py-[11px] px-[16px] text-[14px]"
+                    />
+                  </div>
+                  <div class="gap-1 flex flex-col">
+                    <label
+                      for="companyAddress"
+                      class="text-[16px] font-semibold text-[#121110]"
+                      >Địa chỉ công ty
+                      <span class="font-medium text-[14px] text-[#61605D]"
+                        >(Tùy chọn)</span
+                      ></label
+                    >
+                    <input
+                      required
+                      id="companyAddress"
+                      type="text"
+                      placeholder="Nhập địa chỉ công ty trên giấy phép KD"
+                      class="w-full border rounded-[10px] outline-none font-medium bg-[#F3F3F3] border-[#F3F3F3] py-[11px] px-[16px] text-[14px]"
+                    />
+                  </div>
+                  <div class="gap-1 flex flex-col">
+                    <label
+                      for="email"
+                      class="text-[16px] font-semibold text-[#121110]"
+                      >Email
+                      <span class="font-medium text-[14px] text-[#61605D]"
+                        >(Tùy chọn)</span
+                      ></label
+                    >
+                    <input
+                      required
+                      id="email"
+                      type="text"
+                      placeholder="Nhập email công ty"
+                      class="w-full border rounded-[10px] outline-none font-medium bg-[#F3F3F3] border-[#F3F3F3] py-[11px] px-[16px] text-[14px]"
+                    />
+                  </div>
+                  <div class="gap-1 flex flex-col">
+                    <label
+                      for="name"
+                      class="text-[16px] font-semibold text-[#121110]"
+                      >Họ tên bạn
+                      <span class="font-medium text-[14px] text-[#61605D]"
+                        >(Tùy chọn)</span
+                      ></label
+                    >
+                    <input
+                      required
+                      id="name"
+                      type="text"
+                      placeholder="Nhập họ tên"
+                      class="w-full border rounded-[10px] outline-none font-medium bg-[#F3F3F3] border-[#F3F3F3] py-[11px] px-[16px] text-[14px]"
+                    />
+                  </div>
+                  <div class="gap-1 flex flex-col">
+                    <label
+                      for="positionCompany"
+                      class="text-[16px] font-semibold text-[#121110]"
+                    >
+                      Ví trí làm việc trong công ty
+                      <span class="font-medium text-[14px] text-[#61605D]"
+                        >(Tùy chọn)</span
+                      ></label
+                    >
+                    <input
+                      required
+                      id="positionCompany"
+                      type="text"
+                      placeholder="Nhập vị trí"
+                      class="w-full border rounded-[10px] outline-none font-medium bg-[#F3F3F3] border-[#F3F3F3] py-[11px] px-[16px] text-[14px]"
+                    />
+                  </div>
+                </div>
+              </div>
+              <!-- Nút -->
+              <div class="flex items-center gap-4">
+                <button
+                  class="px-6 cursor-pointer w-full py-2 font-semibold bg-[#F1F1EF] text-[16px] rounded-[10px] text-[#121110] leading-[27px]"
+                >
+                  Hủy
+                </button>
+                <button
+                  class="px-6 cursor-pointer w-full py-2 font-semibold bg-[#FFA21A] text-[16px] rounded-[10px] text-[#121110] leading-[27px]"
+                >
+                  Gửi yêu cầu
+                </button>
+              </div>
+            </form>
+            <!-- Form cá nhân -->
+            <form
+              action="#"
+              id="personalForm"
+              style="display: none"
+              class="flex-col gap-[30px]"
+            >
+              <!-- Các trường nhập cá nhân -->
+              <div class="gap-4 flex flex-col">
+                <div
+                  class="border flex items-center justify-center gap-[18px] border-dashed rounded-[10px] py-4 px-3 border-[#FFC900] bg-[#FFEFD5] text-center"
+                >
+                  <p class="text-sm text-[#121110] font-medium">
+                    Tải lên ảnh CMND, CCCD, Hộ chiéu<br /><span
+                      class="text-xs font-normal text-[#61605D]"
+                      >(Với CMND, CCCD vui lòng tải lên đủ 2 mặt)</span
+                    >
+                  </p>
+                  <div
+                    class="inline-block bg-[#FFA21A] px-[20px] py-[9px] rounded-[10px] cursor-pointer"
+                  >
+                    <input
+                      type="file"
+                      accept="image/*"
+                      class="hidden"
+                      id="upload"
+                    />
+                    <label
+                      for="upload"
+                      class="text-[#121110] font-semibold text-[14px] cursor-pointer"
+                      >Chọn ảnh</label
+                    >
+                  </div>
+                </div>
+                <div class="gap-1 flex flex-col">
+                  <label
+                    for="name"
+                    class="text-[16px] font-semibold text-[#121110]"
+                    >Họ tên bạn
+                    <span class="font-medium text-[14px] text-[#61605D]"
+                      >(Tùy chọn)</span
+                    ></label
+                  >
+                  <input
+                    required
+                    id="name"
+                    type="text"
+                    placeholder="Nhập họ tên"
+                    class="w-full border rounded-[10px] outline-none font-medium bg-[#F3F3F3] border-[#F3F3F3] py-[11px] px-[16px] text-[14px]"
+                  />
+                </div>
+                <div class="gap-1 flex flex-col">
+                  <label
+                    for="email"
+                    class="text-[16px] font-semibold text-[#121110]"
+                    >Email
+                    <span class="font-medium text-[14px] text-[#61605D]"
+                      >(Tùy chọn)</span
+                    ></label
+                  >
+                  <input
+                    required
+                    id="email"
+                    type="text"
+                    placeholder="Nhập email công ty"
+                    class="w-full border rounded-[10px] outline-none font-medium bg-[#F3F3F3] border-[#F3F3F3] py-[11px] px-[16px] text-[14px]"
+                  />
+                </div>
+              </div>
+              <!-- Nút -->
+              <div class="flex items-center gap-4">
+                <button
+                  class="px-6 cursor-pointer w-full py-2 font-semibold bg-[#F1F1EF] text-[16px] rounded-[10px] text-[#121110] leading-[27px]"
+                >
+                  Hủy
+                </button>
+                <button
+                  class="px-6 cursor-pointer w-full py-2 font-semibold bg-[#FFA21A] text-[16px] rounded-[10px] text-[#121110] leading-[27px]"
+                >
+                  Gửi yêu cầu
+                </button>
+              </div>
+            </form>
           </div>
-
-          <!-- Nút -->
-          <div class="flex justify-between items-center mt-4">
-            <button
-              class="px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300"
+          <!-- Hỗ trợ -->
+          <div class="flex items-center gap-1.5 justify-center">
+            <p class="text-[14px] font-semibold text-grey-600">
+              Bạn đang có vấn đề?
+            </p>
+            <a href="#" class="text-[14px] font-medium text-[#1A77FF]"
+              >Yêu cầu hỗ trợ</a
             >
-              Hủy
-            </button>
-            <button
-              class="px-6 py-2 bg-orange-500 text-white rounded-lg hover:bg-orange-600"
-            >
-              Gửi yêu cầu
-            </button>
           </div>
         </div>
-
-        <!-- Hỗ trợ -->
-        <p class="text-sm text-center text-gray-600">
-          Bạn đang có vấn đề?
-          <a href="#" class="text-blue-600 hover:underline">Yêu cầu hỗ trợ</a>
-        </p>
+        <!-- Bổ sung thông tin thành công -->
       </div>
     </div>
 
     <!-- Footer -->
-    <footer class="text-center text-sm text-gray-700 mt-12 mb-4">
-      © 2024 comacPro. Ltd. All Rights Reserved
+    <footer class="bg-white h-[60px] flex items-center justify-center">
+      <p class="text-[16px] leading-[21px] font-semibold text-[#4C4A48]">
+        © 2024 comacPro. Ltd. All Rights Reserved
+      </p>
     </footer>
+    <script src="./index.js"></script>
   </body>
 </html>
