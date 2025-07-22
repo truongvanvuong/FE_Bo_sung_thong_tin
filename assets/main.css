@@ -89,3 +89,31 @@
     transform: scale(0.9);
   }
 }
+@media (max-width: 992px) {
+  .nav-responsive {
+    width: 65%;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    background: white;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s linear;
+    transform: translateX(-100%);
+  }
+  .nav-responsive .nav-links {
+    transition: all 0.3s ease-out;
+    display: flex;
+    flex-direction: column;
+    margin-left: 24px;
+  }
+  .nav-show {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}

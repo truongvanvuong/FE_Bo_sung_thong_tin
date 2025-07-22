@@ -10,7 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
+    <link
+      rel="stylesheet"
+      href="./assets/themify-icons-font/themify-icons/themify-icons.css"
+    />
     <link rel="stylesheet" href="./assets/main.css" />
     <style type="text/tailwindcss">
       @theme {
@@ -29,9 +32,13 @@
     >
       <div class="flex items-center justify-between mx-[30px] w-full">
         <div class="flex items-center gap-5">
+          <div
+            onclick="handleNav()"
+            class="ti-menu text-[24px] cursor-pointer min-[992px]:hidden"
+          ></div>
           <a>
             <div>
-              <figure class="h-[26px]">
+              <figure class="lg:h-[26px] h-[16px] hidden md:block">
                 <img
                   class="w-full h-full"
                   src="./assets/Logo.png"
@@ -40,41 +47,60 @@
               </figure>
             </div>
           </a>
-          <nav class="gap-[10px]">
-            <a
-              href="#"
-              class="px-[20px] py-2 font-semibold text-[18px] leading-[27px] text-grey-600 bg-[#FFEFD5] rounded-[10px]"
-              >Bán</a
+          <div class="nav-responsive max-md:shadow">
+            <div
+              class="flex items-center justify-between px-6 my-6 min-[992px]:hidden"
             >
-            <a
-              href="#"
-              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
-              >Cho thuê</a
-            >
-            <a
-              href="#"
-              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
-              >Danh mục</a
-            ><a
-              href="#"
-              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
-              >Blogs</a
-            ><a
-              href="#"
-              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
-              >FAQ</a
-            ><a
-              href="#"
-              class="px-[10px] font-semibold text-[18px] leading-[27px] text-grey-600"
-              >Về chúng tôi</a
-            >
-          </nav>
+              <div>
+                <figure class="lg:h-[26px] h-[16px]">
+                  <img
+                    class="w-full h-full"
+                    src="./assets/Logo.png"
+                    alt="comanpro"
+                  />
+                </figure>
+              </div>
+              <div
+                class="ti-close text-[20px] cursor-pointer"
+                onclick="closeNav()"
+              ></div>
+            </div>
+            <nav class="gap-[10px] nav-links">
+              <a
+                href="#"
+                class="px-[20px] py-2 font-semibold text-[14px] lg:text-[18px] leading-[27px] text-grey-600 bg-[#FFEFD5] rounded-[10px]"
+                >Bán</a
+              >
+              <a
+                href="#"
+                class="px-[10px] font-semibold text-[14px] lg:text-[18px] leading-[27px] text-grey-600"
+                >Cho thuê</a
+              >
+              <a
+                href="#"
+                class="px-[10px] font-semibold text-[14px] lg:text-[18px] leading-[27px] text-grey-600"
+                >Danh mục</a
+              ><a
+                href="#"
+                class="px-[10px] font-semibold text-[14px] lg:text-[18px] leading-[27px] text-grey-600"
+                >Blogs</a
+              ><a
+                href="#"
+                class="px-[10px] font-semibold text-[14px] lg:text-[18px] leading-[27px] text-grey-600"
+                >FAQ</a
+              ><a
+                href="#"
+                class="px-[10px] font-semibold text-[14px] lg:text-[18px] leading-[27px] text-grey-600"
+                >Về chúng tôi</a
+              >
+            </nav>
+          </div>
         </div>
         <div class="flex items-center gap-4">
           <button
-            class="flex items-center gap-[10px] px-[20px] py-[9px] bg-[#FFA21A] rounded-[10px]"
+            class="flex items-center gap-[10px] px-4 py-3 lg:px-[20px] lg:py-[11px] bg-[#FFA21A] rounded-[10px]"
           >
-            <figure class="size-6">
+            <figure class="size-4 lg:size-6">
               <img
                 class="w-full h-full"
                 src="./assets/note-add.svg"
@@ -83,8 +109,10 @@
             </figure>
             <span> Đăng sản phẩm </span>
           </button>
-          <button class="px-[20px] py-[11px] bg-[#FFA21A] rounded-[10px]">
-            <figure class="size-6">
+          <button
+            class="px-4 py-3 lg:px-[20px] lg:py-[11px] bg-[#FFA21A] rounded-[10px]"
+          >
+            <figure class="size-4 lg:size-6">
               <img
                 class="w-full h-full"
                 src="./assets/note-add.svg"
@@ -104,7 +132,7 @@
 
       <!-- Form container -->
       <div
-        class="bg-white relative shadow-[0px_0p_16p_0px_#00000026] rounded-[20px] p-[30px] w-full max-w-xl mt-[50px] mb-[50px]"
+        class="bg-white relative shadow-[0px_0p_16p_0px_#00000026] rounded-[20px] p-[30px] w-full mx-6 md:max-w-xl mt-[50px] mb-[50px]"
       >
         <!-- Bổ sung thông tin thành công -->
         <div class="flex-col gap-[30px] flex">
@@ -131,7 +159,9 @@
 
     <!-- Footer -->
     <footer class="bg-white h-[60px] flex items-center justify-center">
-      <p class="text-[16px] leading-[21px] font-semibold text-[#4C4A48]">
+      <p
+        class="text-[16px] leading-[21px] font-semibold text-[#4C4A48] mx-4 text-center"
+      >
         © 2024 comacPro. Ltd. All Rights Reserved
       </p>
     </footer>
